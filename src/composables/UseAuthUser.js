@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { useSupabase } from 'boot/supabase'
+import useSupabase from 'boot/supabase'
 
 const user = ref(null)
 
@@ -7,14 +7,14 @@ export default function useAuthUser () {
   const { supabase } = useSupabase()
 
   const login = async ({ email, password }) => {
-    const { user, error } = await supabase.auth.SignIn({ email, password })
+    const { user, error } = await supabase.auth.signIn({ email, password })
     if (error) throw error
     console.log(user)
     return user
   }
 
   const loginWithSocialProvider = async (provider) => {
-    const { user, error } = await supabase.auth.SignIn({ provider })
+    const { user, error } = await supabase.auth.signIn({ provider })
     if (error) throw error
     return user
   }
