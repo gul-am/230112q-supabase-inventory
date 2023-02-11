@@ -5,11 +5,12 @@ const user = ref(null)
 
 export default function useAuthUser () {
   const { supabase } = useSupabase()
-
+  /**
+ *login with password and email
+ */
   const login = async ({ email, password }) => {
-    const { user, error } = await supabase.auth.signIn({ email, password })
+    const { user, error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) throw error
-    console.log(user)
     return user
   }
 
@@ -57,8 +58,8 @@ export default function useAuthUser () {
     user,
     login,
     loginWithSocialProvider,
-    logout,
     isLoggedIn,
+    logout,
     register,
     update,
     sendPasswordRestEmail
