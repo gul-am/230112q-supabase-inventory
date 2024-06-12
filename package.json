@@ -12,7 +12,8 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "@supabase/supabase-js": "^2.7.1",
-    "axios": "^0.21.1",
+    "axios": "^1.7.2",
+    "g": "^2.0.1",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0"
@@ -29,7 +30,7 @@
     "postcss": "^8.4.14"
   },
   "engines": {
-    "node": "^18 || ^16 || ^14.19",
+    "node": ">=20 || >=18 || >=16",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
   }
