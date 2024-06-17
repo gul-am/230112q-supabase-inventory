@@ -29,6 +29,13 @@ export default route(function (/* { store, ssrContext } */) {
 
   Router.beforeEach((to) => {
     const { isLoggedIn } = useAuthUser()
+    if (
+      !isLoggedIn() &&
+      to.meta.requiresAuth &&
+      !Object.keys(to.query).includes('fromEmail')
+    ) {
+      return { name: 'login' }
+    }
   })
 
   return Router

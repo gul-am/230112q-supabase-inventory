@@ -18,7 +18,10 @@ const routes = [
       { path: 'me', name: 'me', component: () => import('pages/MePage.vue') }
 
       // { path: '', component: () => import('pages/IndexPage.vue') }
-    ]
+    ],
+    meta: {
+      requiresAuth: true
+    }
   },
 
   // Always leave this as last one,
