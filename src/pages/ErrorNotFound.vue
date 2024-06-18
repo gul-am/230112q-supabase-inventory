@@ -14,8 +14,8 @@
         color="white"
         text-color="blue"
         unelevated
-        to="/"
-        label="Go Home"
+        :to="{ name:'login'}"
+        label="Go Back"
         no-caps
       />
     </div>
