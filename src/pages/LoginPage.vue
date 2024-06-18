@@ -47,6 +47,7 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import useAuthUser from 'src/composables/UseAuthUser'
+import useNotify from 'src/composables/UseNotify'
 import { useRouter } from 'vue-router'
 
 export default defineComponent({
@@ -57,6 +58,8 @@ export default defineComponent({
 
     const { login } = useAuthUser()
 
+    const { notifyError, notifySucess } = useNotify()
+
     const form = ref({
       email: '',
       password: ''
@@ -65,9 +68,11 @@ export default defineComponent({
     const handleLogin = async () => {
       try {
         await login(form.value)
+        notifySucess('Login successfully')
         router.push({ name: 'me' })
       } catch (error) {
-        alert(error.message)
+        notifyError(error.message)
+        // alert(error.message)
       }
     }
 
