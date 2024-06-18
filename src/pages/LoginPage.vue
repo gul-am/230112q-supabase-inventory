@@ -21,25 +21,24 @@
         type="submit"
       />
     </div>
-    <div class="full-width q-pt-sm">
+    <div class="full-width q-pt-sm" q-gutter-y-sm >
       <q-btn
         label="Register"
         color="primary"
         class="full-width"
         flat
-        to="/register"
+        :to="{ name:'register'}"
+        size="sm"
       />
-    </div>
-    <div class="full-width q-pt-md">
       <q-btn
-        label="Contact Us"
+        label="Reset Password"
         color="primary"
         class="full-width"
         flat
-        to="/contacts"
+        :to="{ name: 'forgot-password' }"
+        size="sm"
       />
     </div>
-
     </div>
    </q-form>
   </q-page>

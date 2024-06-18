@@ -16,7 +16,7 @@
           v-model="form.password"
         />
 
-        <div class="full-width q-pt-md">
+        <div class="full-width q-pt-md q-gutter-y-sm">
           <q-btn
             label="Register"
             color="primary"
@@ -24,14 +24,14 @@
             outline
             type="submit"
           />
-        </div>
-        <div class="full-width q-pt-md">
           <q-btn
-            label="Contact Us"
-            color="primary"
+            label="back"
+            color="dark"
             class="full-width"
+            rounded
             flat
-            to="/contacts"
+            type="submit"
+            :to="{ name: 'login' }"
           />
         </div>
 
