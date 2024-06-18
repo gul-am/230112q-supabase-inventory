@@ -6,7 +6,7 @@
 
         <q-input
           label="New Password"
-          v-model="Password"
+          v-model="password"
         />
 
         <div class="full-width q-pt-md q-gutter-y-sm">
