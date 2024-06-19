@@ -74,7 +74,7 @@ const linksList = [
     title: 'Category',
     caption: 'Categorias',
     icon: 'mdi-shape-outline',
-    routeName: 'me'
+    routeName: 'category'
   }
 ]
 

@@ -9,16 +9,15 @@ const routes = [
       { path: 'register', name: 'register', component: () => import('pages/RegisterPage.vue') },
       { path: 'email-confirmation', name: 'email-confirmation', component: () => import('pages/EmailConfirmationPage.vue') },
       { path: 'forgot-password', name: 'forgot-password', component: () => import('pages/PasswordRecoverPage.vue') },
-      { path: 'reset-password', name: 'reset-password', component: () => import('pages/ResetPasswordPage.vue') },
-      { path: 'category', name: 'category', component: () => import('pages/categorexs/List.vue') }
-
+      { path: 'reset-password', name: 'reset-password', component: () => import('pages/ResetPasswordPage.vue') }
     ]
   },
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: 'me', name: 'me', component: () => import('pages/MePage.vue') }
+      { path: 'me', name: 'me', component: () => import('pages/MePage.vue') },
+      { path: 'category', name: 'category', component: () => import('pages/category/List.vue') }
 
       // { path: '', component: () => import('pages/IndexPage.vue') }
     ],

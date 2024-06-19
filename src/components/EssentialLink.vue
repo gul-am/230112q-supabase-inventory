@@ -36,7 +36,7 @@ export default defineComponent({
 
     routeName: {
       type: String,
-      default: '#'
+      default: ''
     },
 
     icon: {
