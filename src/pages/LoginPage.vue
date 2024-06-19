@@ -6,10 +6,16 @@
       <q-input
         label="Email"
         v-model="form.email"
+        lazy-rules
+        :rules="[ val => (val && val.length > 0) || 'Email is required']"
+        type="email"
       />
       <q-input
         label="password"
         v-model="form.password"
+        lazy-rules
+        :rules="[ val => (val && val.length > 0) || 'Password is required']"
+        type="password"
       />
 
     <div class="full-width q-pt-md">

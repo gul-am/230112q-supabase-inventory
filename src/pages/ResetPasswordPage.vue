@@ -7,6 +7,8 @@
         <q-input
           label="New Password"
           v-model="password"
+          :rules="[ val => (val && val.length >= 6) || 'Password must be 6 to 8 characters']"
+          type="password"
         />
 
         <div class="full-width q-pt-md q-gutter-y-sm">
@@ -27,12 +29,14 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import useAuthUser from 'src/composables/useAuthUser'
+import useNotify from 'src/composables/UseNotify'
 import { useRouter, useRoute } from 'vue-router'
 
 export default defineComponent({
   name: 'PageResetPassword',
   setup () {
     const { resetPassword } = useAuthUser()
+    const { notifyError, notifySuccess } = useNotify()
     const router = useRoute()
     const route = useRouter()
     const token = route.query.token
@@ -40,8 +44,13 @@ export default defineComponent({
     const password = ref('')
 
     const handlePasswordReset = async () => {
-      await resetPassword(token, password.value)
-      router.push({ name: 'login' })
+      try {
+        await resetPassword(token, password.value)
+        notifySuccess('New Password Assigned')
+        router.push({ name: 'login' })
+      } catch (error) {
+        notifyError(error.message)
+      }
     }
 
     return {
