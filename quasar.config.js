@@ -60,7 +60,7 @@ module.exports = configure(function (/* ctx */) {
         node: 'node16'
       },
 
-      vueRouterMode: 'history' // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -69,9 +69,12 @@ module.exports = configure(function (/* ctx */) {
 
       // publicPath: '/',
       // analyze: true,
-      // env: {},
+      env: {
+        SUPABASE_URL: 'https://sfrmrjmabiujvnbcshfn.supabase.co',
+        SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmcm1yam1hYml1anZuYmNzaGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYxNTA5NDYsImV4cCI6MTk5MTcyNjk0Nn0.b0aWdX9mFa3huVKPeB5p4KwEgPzzpJ9YMRcNeEcJNPo'
+      }
       // rawDefine: {}
-      // ignorePublicFolder: true,
+      // ignorePublicFolder: true,S
       // minify: false,
       // polyfillModulePreload: true,
       // distDir
