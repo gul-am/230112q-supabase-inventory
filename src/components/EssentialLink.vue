@@ -1,7 +1,7 @@
 <template>
   <q-item
     clickable
-    :to="{ name: 'routeName' }"
+    :to="{ name: routeName }"
     exact
   >
     <q-item-section
@@ -19,9 +19,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'EssentialLink',
   props: {
     title: {
@@ -43,6 +41,11 @@ export default defineComponent({
       type: String,
       default: ''
     }
+  },
+  computed: {
+    route () {
+      return { name: this.routeName }
+    }
   }
-})
+}
 </script>

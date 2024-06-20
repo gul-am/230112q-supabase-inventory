@@ -15,8 +15,6 @@
           Inventory Managment
         </q-toolbar-title>
 
-<!--botao de logout-->
-
         <q-btn-dropdown flat color="white" icon="person">
           <q-list>
             <q-item clickable v-close-popup @click="handleLogout">
@@ -57,26 +55,27 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
-import useAuthUser from 'src/composables/UseAuthUser'
-import { useRouter } from 'vue-router'
-import { useQuasar } from 'quasar'
 
 const linksList = [
   {
     title: 'Home',
-    caption: 'Dashboard',
+    caption: '',
     icon: 'mdi-home-outline',
     routeName: 'me'
   },
   {
     title: 'Category',
-    caption: 'Categorias',
+    caption: '',
     icon: 'mdi-shape-outline',
     routeName: 'category'
   }
 ]
+
+import { defineComponent, ref } from 'vue'
+import useAuthUser from 'src/composables/UseAuthUser'
+import { useRouter } from 'vue-router'
+import { useQuasar } from 'quasar'
 
 export default defineComponent({
   name: 'MainLayout',
@@ -89,9 +88,7 @@ export default defineComponent({
     const leftDrawerOpen = ref(false)
 
     const $q = useQuasar()
-
     const router = useRouter()
-
     const { logout } = useAuthUser()
 
     const handleLogout = async () => {

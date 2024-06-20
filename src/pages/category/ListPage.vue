@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
+
 const columns = [
   {
     name: 'name',
@@ -132,12 +134,13 @@ const rows = [
   }
 ]
 
-export default {
+export default defineComponent({
+  name: 'PageList',
   setup () {
     return {
       columns,
       rows
     }
   }
-}
+})
 </script>
